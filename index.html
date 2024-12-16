@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EDC Simple</title>
+    <style>
+      #headerContainer {
+        display: flex;
+        text-align: left;
+        margin-bottom: 20px;
+        display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+      }
+
+      #headerContainer h1 {
+        margin: 0;
+      }
+
+      #headerContainer img {
+        margin-left: 10px;
+        max-height: 50px;
+      }
+
+      #actionsWrapper {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       left: 50%;
+       margin-top: 20px;
+      }
+
+
+      #buttonContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      button {
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      #result {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      form#billForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align the form elements to the left */
+  justify-content: center;
+  text-align: left; /* Ensures the form text is left-aligned */
+  padding: 20px;
+  background-color: white; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; 
+  background-color: rgb(57, 14, 211); 
+}
+    </style>
+  </head>
+  <body style="color: rgb(18, 1, 8); background-color: rgb(57, 14, 211)">
+    <div id="headerContainer">
+      <img src="assets/Edc_logo_khmer.png" alt="EDC Logo" />
+      <h1>អគ្គិសនីកម្ពុជា-EDC</h1>
+      <img src="assets/1.png" alt="EDC Logo" />
+    </div>
+    <div class="test">
+ <form id="billForm">
+      <label for="idInput">បញ្ចូលលេខអតិថីជន:</label>
+      <input type="text" id="idInput" placeholder="Input ID" /><br /><br />
+
+      <label for="nameInput">បញ្ចូលឈ្មោះអតិថីជន:</label>
+      <input type="text" id="nameInput" placeholder="Input name" /><br /><br />
+
+      <label for="oldConsumption">បញ្ចូលលេខគីឡូចាស់ (kWh):</label>
+      <input
+        type="number"
+        id="oldConsumption"
+        placeholder="Enter old Usage"
+      /><br /><br />
+
+      <label for="newConsumption">បញ្ចូលលេខគីឡូថ្មី (kWh):</label>
+      <input
+        type="number"
+        id="newConsumption"
+        placeholder="Enter new Usage"
+      /><br /><br />
+      
+      <label for="trashFees">Price Trash:</label>
+      <select id="trashFees">
+        <option value="10000">10,000 Riel</option>
+        <option value="20000">20,000 Riel</option>
+        <option value="30000">30,000 Riel</option>
+      </select><br /><br />
+    </form>
+    </div>
+   
+
+    <div id="actionsWrapper">
+      <div id="buttonContainer">
+        <button type="button" id="calculateButton">បញ្ជូន</button>
+        <button type="button" id="clearButton">លុប</button>
+      </div>
+      <p id="result"></p>
+    </div>
+
+    <script src="edc.js"></script>
+  </body>
+</html>

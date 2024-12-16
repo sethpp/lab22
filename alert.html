@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EDC Alert</title>
+</head>
+<body>
+    <style>
+        #headerContainer {
+           
+            text-align: center;
+            margin-bottom: 20px; 
+  
+        }
+
+        #headerContainer h1 {
+            margin: 0; 
+       
+        }
+
+        #headerContainer img {
+            margin-left: 10px;
+            max-height: 50px; 
+        }
+    </style>
+    <body style="color: rgb(1, 14, 16); background-color: rgb(240, 243, 243);">
+        <!-- Header Container -->
+        <div id="headerContainer">
+            <img src="assets/Edc_logo_khmer.png" alt="EDC Logo"/>
+            <h1>Thank You.</h1>
+            <img src="assets/Thank.jpg" alt="EDC Logo"/>
+        </div>
+</body>
+<script>
+   alert("ABOUT EDC!");
+
+document.addEventListener("DOMContentLoaded", () => {
+    function calculateElectricityBill(units) {
+        if (units <= 50) {
+            return units * 500;
+        } else if (units <= 100) {
+            return units *1000;
+        } else if (units <= 150) {
+            return units * 1500;
+        } else if (units <= 200) {
+            return units * 2000;
+        } else {
+            return units * 2500;
+        }
+    }
+
+    // Begin the alert and prompt sequence
+    const id = prompt("Enter ID:");
+    alert(`Customer ID: ${id}`);
+
+    const name = prompt("Enter Name:");
+    alert(`Customer Name: ${name}`);
+
+    const oldVal = parseInt(prompt("Enter_Old Usage (kWh):"), 10);
+    alert(`Old Usage: ${oldVal}`);
+
+    const newVal = parseInt(prompt("Enter_New Usage (kWh):"), 10);
+    alert(`New Usage: ${newVal}`);
+
+    if (isNaN(oldVal) || isNaN(newVal) || oldVal >= newVal) {
+        alert("Error: New Usage must be greater than Old Usage.");
+        return;
+    }
+
+    const trashFee = parseInt(prompt("Enter Trash Fee (e.g., 10000, 20000, etc.):"), 10);
+    alert(`Trash Fee Selected: ${trashFee} Riel`);
+
+    const unitsUsed = newVal - oldVal;
+    const electricityBill = calculateElectricityBill(unitsUsed);
+    const total = electricityBill + trashFee;
+
+    alert(`Total Amount: ${total} Riel\n(Electricity: ${electricityBill} Riel, Trash Fee: ${trashFee} Riel)`);
+
+    const clearConfirmation = confirm("DO YOU WANT TO CLEAR ALL DATA?");
+    if (clearConfirmation) {
+        alert("Reload the page to start over.");
+    }
+});
+
+</script>
+</html>
